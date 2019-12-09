@@ -2,8 +2,11 @@
 
 namespace Demonstration
 {
+    ///PLEASE VIEW "RAW" CODE TO ENSURE CORRECT FORMATTING IN WEB DISPLAY OF CODE IN GITHUB.
+
     /// <summary>
     /// Binary Tree
+    ///
     /// This solution is a conversion of a java based Binary Tree reference implementation into a C# implementation.
     /// This reference implementation was chosen for its flexibility and completeness
     /// The solution has been modified to use a generic payload.
@@ -92,15 +95,15 @@ namespace Demonstration
         /// Lookup returns true if the given target is in the binary tree. 
         /// Uses a recursive helper. 
         /// </summary>
-  	    public bool Lookup(T data) 
-	    { 
-   		    return(Lookup(root, data)); 
-  	    } 
+        public bool Lookup(T data) 
+        {
+            return(Lookup(root, data));
+        } 
 
 
         /// <summary>
-   		/// Recursive Lookup  -- given a node, recur 
-   		/// down searching for the given data. 
+        /// Recursive Lookup  -- given a node, recur 
+        /// down searching for the given data. 
         /// </summary>
   	    private bool Lookup(Node<T> node, T data) 
 	    { 
