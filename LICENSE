@@ -19,3 +19,15 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+This implementation is based on Stanford materials available at:
+http://cslibrary.stanford.edu/110/BinaryTrees.html
+
+For the MIT library terms to apply, the following paragraph must be included in this and all derived materials:
+
+Stanford CS Education Library -- #110
+This is article #110 in the Stanford CS Education Library. This and other free CS materials 
+are available at the library (http://cslibrary.stanford.edu/). That people seeking education 
+should have the opportunity to find it. This article may be used, reproduced, excerpted, or 
+sold so long as this paragraph is clearly reproduced. Copyright 2000-2001, 
+Nick Parlante, nick.parlante@cs.stanford.edu. 
