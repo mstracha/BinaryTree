@@ -13,7 +13,9 @@ The purpose of this demonstration is to provide an example of:
 6) Application of branching and merging in git with visual studio code
 
 BinaryTree is a generic class and therefore does not contain a main method.
+
 PrintingMethods.cs has a Main method which can be run with the command "dotnet run" to show console output verifying BinaryTree.cs functionality.
+
 TestClass.cs contains Xunit tests which can be run with the command "dotnet test" to show console output verifying BinaryTree.cs functionality.
 
 Expected results are included as comments in PrintingMethods.cs and TestClass.cs files as comments.
