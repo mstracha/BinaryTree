@@ -105,39 +105,39 @@ namespace Demonstration
         /// Recursive Lookup  -- given a node, recur 
         /// down searching for the given data. 
         /// </summary>
-  	    private bool Lookup(Node<T> node, T data) 
-	    { 
-    	    if (node==null) 
-		    { 
-    		    return(false); 
-    	    }
+        private bool Lookup(Node<T> node, T data) 
+        { 
+            if (node==null) 
+            {
+                return(false);
+            }
  
             // If data == node.data, with IComparable
-        	if (data.CompareTo(node.data)==0) 
-	    	{ 
-    	    	return(true); 
-    	    } 
+            if (data.CompareTo(node.data)==0) 
+            {
+                return(true);
+            }
             // if data < node.data
-        	else if (data.CompareTo(node.data)<0) 
-		    { 
-      			return(Lookup(node.left, data)); 
-    		} 
-    		else 
+            else if (data.CompareTo(node.data)<0)
+            {
+                return(Lookup(node.left, data));
+            }
+            else
             // data > node.data
-		    { 
-      			return(Lookup(node.right, data)); 
-    		} 
-  	    } 
-  
-
+            {
+                return(Lookup(node.right, data));
+            }
+        }
+        
+        
         /// <summary>
-   		/// Inserts the given data into the binary tree. 
-   		/// Uses a recursive helper. 
+        /// Inserts the given data into the binary tree.
+        /// Uses a recursive helper.
         /// </summary>
-  	    public void Insert(T data) 
-	    { 
-    	    root = Insert(root, data); 
-  	    } 
+        public void Insert(T data)
+        {
+            root = Insert(root, data);
+        } 
   
 
         /// <summary>
