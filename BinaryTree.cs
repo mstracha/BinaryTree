@@ -32,7 +32,7 @@ namespace Demonstration
         /// <summary>
         /// Root node. Will be null for an empty tree.     
         /// </summary>
-  	    public Node<T> root { get; set; }
+        public Node<T> root { get; set; }
   
         #endregion
 
@@ -44,15 +44,17 @@ namespace Demonstration
         /// The node is a "dumb" nested class -- we just use it for 
         /// storage; it does not have any methods. 
         /// </summary>
-  	    public class Node<U> where U : IComparable<U> 
-	    {    
+        public class Node<U> where U : IComparable<U> 
+        {    
             #region Properties
+
             /// <summary>
             /// Left and Right nodes, and generic payload - standard structure for a binary tree.
             /// </summary>
     	    public Node<U> left { get; set; } 
             public Node<U> right { get; set; } 
             public U data { get; set; } 
+
             #endregion
 
             #region Constructor
@@ -66,7 +68,7 @@ namespace Demonstration
                 data = newData; 
             } 
             #endregion
-  	    } 
+        } 
     
 
         #region Constructor
