@@ -3,6 +3,7 @@
 namespace Demonstration
 {
     ///PLEASE VIEW "RAW" CODE TO ENSURE CORRECT FORMATTING IN WEB DISPLAY OF CODE IN GITHUB.
+    ///THIS IS REQUIRED IF WEBVIEW OF GITHUB IS DISPLAYING ANYTHING THAT APPEARS TO BE INCORRECT INDENTING
 
     /// <summary>
     /// Binary Tree
@@ -141,34 +142,34 @@ namespace Demonstration
   
 
         /// <summary>
-   		/// Recursive insert -- given a node pointer, recur down and 
-   		/// insert the given data into the tree. Returns the new 
-   		/// node pointer (the standard way to communicate 
-   		/// a changed pointer back to the caller). 
+        /// Recursive insert -- given a node pointer, recur down and
+        /// insert the given data into the tree. Returns the new
+        /// node pointer (the standard way to communicate
+        /// a changed pointer back to the caller).
         /// </summary>
-  	    private Node<T> Insert(Node<T> node, T data) 
-	    { 
-    	    if (node==null) 
-		    { 
-    		    node = new Node<T>(data); 
-    	    } 
-    	    else 
-		    { 
+        private Node<T> Insert(Node<T> node, T data)
+        {
+            if (node==null)
+            {
+                node = new Node<T>(data);
+            }
+            else
+            {
                 // data <= node.data
-    		    if (data.CompareTo(node.data) < 1) 
-			    { 
-       			    node.left = Insert(node.left, data); 
-    		    } 
-        	    else 
+                if (data.CompareTo(node.data) < 1)
+                {
+                    node.left = Insert(node.left, data);
+                }
+                else
                 // data > node.data
-			    { 
-        		    node.right = Insert(node.right, data); 
-    		    } 
-		    } 
-            return(node); // in any case, return the new pointer to the caller 
-  	    } 
+                {
+                    node.right = Insert(node.right, data);
+                }
+            }
+            return(node); // in any case, return the new pointer to the caller
+        }
 
-
+        
         /// <summary>
  		/// Build 123 by calling insert() three times. 
  		/// Note that the 'Two' must be inserted first. 
