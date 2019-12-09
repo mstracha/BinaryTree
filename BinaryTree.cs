@@ -72,22 +72,25 @@ namespace Demonstration
     
 
         #region Constructor
+
         /// <summary>
         /// Constructor creates an empty binary tree -- a null root pointer. 
         /// </summary>
-  	    public BinaryTree() 
-    	{
+        public BinaryTree() 
+        {
             root = null; 
-  	    } 
+        } 
+
         #endregion
  
 
         #region Methods
+
         // Note - I am mixing public and private methods in the same region to group them together by function
 
         /// <summary>
         /// Lookup returns true if the given target is in the binary tree. 
-   		/// Uses a recursive helper. 
+        /// Uses a recursive helper. 
         /// </summary>
   	    public bool Lookup(T data) 
 	    { 
