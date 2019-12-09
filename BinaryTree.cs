@@ -169,290 +169,286 @@ namespace Demonstration
             return(node); // in any case, return the new pointer to the caller
         }
 
-        
+
         /// <summary>
- 		/// Build 123 by calling insert() three times. 
- 		/// Note that the 'Two' must be inserted first. 
+        /// Build 123 by calling insert() three times.
+        /// Note that the 'Two' must be inserted first.
         /// Parameters must be ordered by Comparable from smallest to largest
         /// </summary>
-	    public void Build123c(T One, T Two, T Three) 
-	    { 
-  		    root = null; 
-  		    root = Insert(root, Two); 
-  		    root = Insert(root, One); 
-  		    root = Insert(root, Three); 
-	    } 
-  
-  
+        public void Build123c(T One, T Two, T Three)
+        {
+            root = null;
+            root = Insert(root, Two);
+            root = Insert(root, One);
+            root = Insert(root, Three);
+        }
+        
+        
         /// <summary>
-		/// Size
- 		/// Returns the number of nodes in the tree. 
- 		/// Uses a recursive helper that recurs 
- 		/// down the tree and counts the nodes. 
+        /// Size
+        /// Returns the number of nodes in the tree.
+        /// Uses a recursive helper that recurs
+        /// down the tree and counts the nodes.
         /// </summary>
-	    public int Size() 
-	    { 
-  		    return(Size(root)); 
-	    }
-
-	    private int Size(Node<T> node) 
-	    { 
-  		    if (node == null)
-		    {
-		 	    return(0);
-		    } 
-  		    else 
-		    { 
-   	 		    return(Size(node.left) + 1 + Size(node.right)); 
-  		    } 
-	    } 
-  
-
+        public int Size()
+        {
+            return(Size(root));
+        }
+        
+        private int Size(Node<T> node)
+        {
+            if (node == null)
+            {
+                return(0);
+            }
+            else
+            {
+                return(Size(node.left) + 1 + Size(node.right));
+            }
+        }
+        
+        
         /// <summary>
-		/// MaxDepth Returns the max root-to-leaf depth of the tree. 
- 		/// Uses a recursive helper that recurs down to find 
- 		/// the max depth. 
+        /// MaxDepth Returns the max root-to-leaf depth of the tree.
+        /// Uses a recursive helper that recurs down to find
+        /// the max depth.
         /// </summary>
-	    public int MaxDepth() 
-	    { 
-  		    return(MaxDepth(root)); 
-	    }
-
-	    private int MaxDepth(Node<T> node) 
-	    { 
-  		    if (node==null) 
-		    { 
-    		    return(0); 
-  		    } 
-  		    else 
-		    { 
-    		    int lDepth = MaxDepth(node.left); 
-    		    int rDepth = MaxDepth(node.right); 
-    			
-			    // use the larger + 1 
-    		    return(Math.Max(lDepth, rDepth) + 1); 
-  		    } 
-	    } 
-  
-
+        public int MaxDepth()
+        {
+            return(MaxDepth(root));
+        }
+        
+        private int MaxDepth(Node<T> node)
+        {
+            if (node==null)
+            {
+                return(0);
+            }
+            else
+            {
+                int lDepth = MaxDepth(node.left);
+                int rDepth = MaxDepth(node.right); 
+                
+                // use the larger + 1
+                return(Math.Max(lDepth, rDepth) + 1);
+            }
+        }
+        
+        
         /// <summary>
-		/// MinValue Returns the min value in a non-empty binary search tree. 
- 		/// Uses a helper method that iterates to the left to find 
- 		/// the min value. 
+        /// MinValue Returns the min value in a non-empty binary search tree.
+        /// Uses a helper method that iterates to the left to find
+        /// the min value.
         /// </summary>
-	    public T MinValue() 
-	    { 
- 		    return( MinValue(root) ); 
-	    } 
-
-
+        public T MinValue()
+        {
+            return( MinValue(root) );
+        }
+        
+        
         /// <summary>
-		/// MinValue Finds the min value in a non-empty binary search tree. 
+        /// MinValue Finds the min value in a non-empty binary search tree.
         /// </summary>
-	    private T MinValue(Node<T> node) 
-	    { 
-  		    Node<T> current = node; 
-  		    while (current.left != null) 
-		    { 
-    		    current = current.left; 
-  		    } 
-  		    return(current.data); 
-	    } 
-
-
+        private T MinValue(Node<T> node)
+        {
+            Node<T> current = node;
+            while (current.left != null)
+            {
+                current = current.left;
+            }
+            return(current.data);
+        }
+        
+        
         /// <summary>
-		/// PrintTree Prints the node values in the "inorder" order. 
- 		/// Uses a recursive helper to do the traversal. 
+        /// PrintTree Prints the node values in the "inorder" order.
+        /// Uses a recursive helper to do the traversal.
         /// </summary>
-	    public void PrintTree() 
-	    { 
- 		    PrintTree(root); 
-	    }
-
-	    private void PrintTree(Node<T> node) 
-	    { 
- 		    if (node == null) 
-			    return; 
- 
-		    // left, node itself, right 
- 		    PrintTree(node.left); 
- 		    Console.WriteLine(node.data + "  "); 
- 		    PrintTree(node.right); 
-	    } 
-  
-
+        public void PrintTree()
+        {
+            PrintTree(root);
+        }
+        
+        private void PrintTree(Node<T> node)
+        { 
+            if (node == null)
+                return;
+                
+            // left, node itself, right
+            PrintTree(node.left);
+            Console.WriteLine(node.data + "  ");
+            PrintTree(node.right);
+        }
+        
+        
         /// <summary>
-		/// PrintPostorder Prints the node values in the "postorder" order. 
- 		/// Uses a recursive helper to do the traversal. 
+        /// PrintPostorder Prints the node values in the "postorder" order.
+        /// Uses a recursive helper to do the traversal.
         /// </summary>
-	    public void PrintPostorder() 
-	    { 
- 		    PrintPostorder(root); 
-	    }
-
-	    public void PrintPostorder(Node<T> node) 
-	    { 
-  		    if (node == null) 
-			    return; 
-  
-		    // first recur on both subtrees 
-  		    PrintPostorder(node.left); 
-  		    PrintPostorder(node.right); 
-  
-		    // then deal with the node 
- 		    Console.WriteLine(node.data + "  "); 
-	    } 
-  
-
+        public void PrintPostorder()
+        {
+            PrintPostorder(root);
+        }
+        
+        public void PrintPostorder(Node<T> node)
+        {
+            if (node == null)
+                return;
+                
+            // first recur on both subtrees
+            PrintPostorder(node.left);
+            PrintPostorder(node.right);
+            
+            // then deal with the node 
+            Console.WriteLine(node.data + "  ");
+        }
+        
         /// <summary>
- 		/// Mirror - Changes the tree into its mirror image. 
- 		/// So the tree... 
-		///        4 
-		///       / \ 
-		///      2   5 
-		///     / \ 
-		///    1   3 
- 		/// is changed to... 
-		///        4 
-		///       / \ 
-		///      5   2 
-		///         / \ 
-		///        3   1 
- 		/// Uses a recursive helper that recurs over the tree, 
- 		/// swapping the left/right pointers. 
+        /// Mirror - Changes the tree into its mirror image.
+        /// So the tree...
+        ///        4
+        ///       / \
+        ///      2   5
+        ///     / \
+        ///    1   3
+        /// is changed to...
+        ///        4
+        ///       / \
+        ///      5   2
+        ///         / \
+        ///        3   1
+        /// Uses a recursive helper that recurs over the tree,
+        /// swapping the left/right pointers.
         /// </summary>
-	    public void Mirror() 
-	    { 
-  		    Mirror(root); 
-	    }
+        public void Mirror()
+        {
+            Mirror(root);
+        }
+        
+        private void Mirror(Node<T> node)
+        {
+            if (node != null)
+            {
+                // do the sub-trees
+                Mirror(node.left);
+                Mirror(node.right); 
 
-	    private void Mirror(Node<T> node) 
-	    { 
-  		    if (node != null) 
-		    { 
-    			// do the sub-trees 
-    			Mirror(node.left); 
-    			Mirror(node.right); 
-    
-			    // swap the left/right pointers 
-    			Node<T> temp = node.left; 
-    			node.left = node.right; 
-    			node.right = temp; 
-  		    } 
-	    } 
-  
-
-
+                // swap the left/right pointers
+                Node<T> temp = node.left;
+                node.left = node.right;
+                node.right = temp;
+            }
+        }
+        
+        
         /// <summary>
-		/// DoubleTree
- 		/// Changes the tree by inserting a duplicate node 
- 		/// on each nodes's .left.
-		/// So the tree... 
-		///    2 
-		///   / \ 
-		///  1   3 
-		/// Is changed to... 
-		///        2 
-		///       / \ 
-		///      2   3 
-		///     /   / 
-		///    1   3 
-		///   / 
-		///  1 
- 		/// Uses a recursive helper to recur over the tree 
- 		/// and insert the duplicates. 
+        /// DoubleTree
+        /// Changes the tree by inserting a duplicate node
+        /// on each nodes's left.
+        /// So the tree...
+        ///    2
+        ///   / \
+        ///  1   3
+        /// Is changed to...
+        ///        2
+        ///       / \
+        ///      2   3
+        ///     /   /
+        ///    1   3
+        ///   /
+        ///  1
+        /// Uses a recursive helper to recur over the tree
+        /// and insert the duplicates.
         /// </summary>
-	    public void DoubleTree() 
-	    { 
- 		    DoubleTree(root); 
-	    }
+        public void DoubleTree()
+        {
+            DoubleTree(root);
+        }
+        
+        private void DoubleTree(Node<T> node)
+        {
+            Node<T> oldLeft;
+            if (node == null)
+                return;
+                
+            // do the subtrees
+            DoubleTree(node.left);
+            DoubleTree(node.right);
 
-	    private void DoubleTree(Node<T> node) 
-	    { 
-  		    Node<T> oldLeft; 
-  		    if (node == null) 
-			    return; 
-  
-		    // do the subtrees 
-  		    DoubleTree(node.left); 
-  		    DoubleTree(node.right); 
-  
-		    // duplicate this node to its left 
-  		    oldLeft = node.left; 
-  	    	node.left = new Node<T>(node.data); 
-  		    node.left.left = oldLeft; 
-	    } 
- 
-
+            // duplicate this node to its left
+            oldLeft = node.left;
+            node.left = new Node<T>(node.data);
+            node.left.left = oldLeft;
+        }
+        
+        
         /// <summary>
-		/// SameTree Compares the receiver to another tree to 
- 		/// see if they are structurally identical. 
+        /// SameTree Compares the receiver to another tree to
+        /// see if they are structurally identical.
         /// </summary>
-	    public bool SameTree(BinaryTree<T> other) 
-	    { 
- 		    return( SameTree(root, other.root) ); 
-	    } 
-
-
+        public bool SameTree(BinaryTree<T> other)
+        {
+            return( SameTree(root, other.root) );
+        }
+        
         /// <summary>
- 		/// Recursive SameTree helper -- recurs down two trees in parallel, 
- 		/// checking to see if they are identical. 	
+        /// Recursive SameTree helper -- recurs down two trees in parallel,
+        /// checking to see if they are identical.
         /// </summary>
-	    bool SameTree(Node<T> a, Node<T> b) 
-	    { 
-  		    // 1. both empty -> true 
-  		    if (a==null && b==null) 
-			    return(true); 
-  
-		    // 2. both non-empty -> compare them 
-  		    else if (a!=null && b!=null) 
-		    { 
-    		    return
-			    ( 
-                    // a.data == b.data 
-      			    (a.data.CompareTo(b.data)==0) && 
-      			    SameTree(a.left, b.left) && 
-      			    SameTree(a.right, b.right) 
-    		    ); 
-  		    } 
-  		
-		    // 3. one empty, one not -> false 
-  		    else return(false); 
-	    } 
-  
-
+        bool SameTree(Node<T> a, Node<T> b)
+        {
+            // 1. both empty -> true
+            if (a==null && b==null)
+                return(true);
+                
+            // 2. both non-empty -> compare them
+            else if (a!=null && b!=null)
+            {
+                return
+                (
+                    // a.data == b.data
+                    (a.data.CompareTo(b.data)==0) &&
+                    SameTree(a.left, b.left) &&
+                    SameTree(a.right, b.right)
+                );
+            }
+            
+            // 3. one empty, one not -> false
+            else return(false);
+        }
+        
+        
         /// <summary>
-		/// CountTrees - For the key values 1...numKeys, how many structurally unique 
- 		/// binary search trees are possible that store those keys? 
- 		/// Strategy: consider that each value could be the root. 
- 		/// Recursively find the size of the left and right subtrees. 	
+        /// CountTrees - For the key values 1...numKeys, how many structurally unique
+        /// binary search trees are possible that store those keys?
+        /// Strategy: consider that each value could be the root.
+        /// Recursively find the size of the left and right subtrees.
         /// </summary>
-	    public static int CountTrees(int numKeys) 
-	    { 
-  		    if (numKeys <=1) 
-		    { 
-    		    return(1); 
-  		    } 
-  		    else 
-		    { 
-    		    // there will be one value at the root, with whatever remains 
-    		    // on the left and right each forming their own subtrees. 
-    		    // Iterate through all the values that could be the root... 
-    		    int sum = 0; 
-    		    int left, right, root; 
-    		    for (root=1; root<=numKeys; root++) 
-		        { 
-      			    left = CountTrees(root-1); 
-      			    right = CountTrees(numKeys - root); 
-      				
-				    // number of possible trees with this root == left*right 
-      			    sum += left*right; 
-    		    } 
-    		    return(sum); 
-  		    } 
-	    } 
-
+        public static int CountTrees(int numKeys)
+        {
+            if (numKeys <=1)
+            {
+                return(1);
+            }
+            else
+            {
+                // there will be one value at the root, with whatever remains
+                // on the left and right each forming their own subtrees.
+                // Iterate through all the values that could be the root...
+                int sum = 0;
+                int left, right, root;
+                for (root=1; root<=numKeys; root++)
+                {
+                    left = CountTrees(root-1);
+                    right = CountTrees(numKeys - root);
+                    
+                    // number of possible trees with this root == left*right
+                    sum += left*right;
+                }
+                return(sum);
+            }
+        }
+        
         #endregion
-
     }
 }
