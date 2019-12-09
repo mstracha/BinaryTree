@@ -28,7 +28,7 @@ namespace Demonstration
     public class BinaryTree<T> where T : IComparable<T> 
     { 
         #region Properties
-  
+        
         /// <summary>
         /// Root node. Will be null for an empty tree.     
         /// </summary>
