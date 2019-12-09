@@ -30,20 +30,20 @@ namespace Demonstration
         #region Properties
   
         /// <summary>
-	    /// Root node. Will be null for an empty tree.     
+        /// Root node. Will be null for an empty tree.     
         /// </summary>
   	    public Node<T> root { get; set; }
   
         #endregion
 
         /// <summary>
-   		/// Node class 
-   		/// The binary tree is built using this nested node class. 
-   		/// Each node stores one data element, and has left and right 
-   		/// sub-tree pointer which may be null. 
-   		/// The node is a "dumb" nested class -- we just use it for 
-   		/// storage; it does not have any methods. 
-  	    /// </summary>
+        /// Node class 
+        /// The binary tree is built using this nested node class. 
+        /// Each node stores one data element, and has left and right 
+        /// sub-tree pointer which may be null. 
+        /// The node is a "dumb" nested class -- we just use it for 
+        /// storage; it does not have any methods. 
+        /// </summary>
   	    public class Node<U> where U : IComparable<U> 
 	    {    
             #region Properties
@@ -51,20 +51,20 @@ namespace Demonstration
             /// Left and Right nodes, and generic payload - standard structure for a binary tree.
             /// </summary>
     	    public Node<U> left { get; set; } 
-    		public Node<U> right { get; set; } 
-		    public U data { get; set; } 
+            public Node<U> right { get; set; } 
+            public U data { get; set; } 
             #endregion
 
             #region Constructor
             /// <summary>
             /// Default constructor for node.
             /// </summary>
-		    public Node(U newData) 
-		    { 
-      		    left = null; 
-      			right = null; 
-      			data = newData; 
-    		} 
+            public Node(U newData) 
+            { 
+                left = null; 
+                right = null; 
+                data = newData; 
+            } 
             #endregion
   	    } 
     
